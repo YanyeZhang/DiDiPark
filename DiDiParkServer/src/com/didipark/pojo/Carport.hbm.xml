@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.didipark.pojo">
+	<!-- 映射User持久化类 -->
+	<class name="Carport" table="tb_CarportInfo">
+		<!-- 映射标识属性 -->
+		<id name="id" column="carport_id">
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性: -->
+		<property name="addr" column="carport_addr" />
+		<property name="describe" column="carport_describe" />
+		<property name="num" column="carport_num" />
+		<property name="latitude" column="carport_latitude" />
+		<property name="longitude" column="carport_longitude" />
+		<property name="perHoursMoney" column="carport_perh_money" />
+		<property name="user_id" column="carport_user_id"></property>
+		<property name="state" column="carport_state"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="100000000" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<package name="android" extends="json-default">
+		<action name="login" class="mylogin" method="login">
+			<result type="json" />
+		</action>
+		<action name="register" class="myRegister" method="resgister">
+			<result type="json" />
+		</action>
+		<action name="figure" class="myFigure" method="figure">
+			<result type="json" />
+		</action>
+		<action name="addCarport" class="myAddCarPort" method="addCarport">
+			<result type="json" />
+		</action>
+		<action name="updateCarport" class="myUpdateCarPort" method="updateCarport">
+			<result type="json" />
+		</action>
+		<action name="getCarport" class="myGetCarPort" method="getCarport">
+			<result type="json" />
+		</action>
+		<action name="getPhone" class="myGetPhone" method="getPhone">
+			<result type="json" />
+		</action>
+		<action name="orderRequest" class="myOrderRequest" method="orderRequest">
+			<result type="json" />
+		</action>
+		<action name="auditResult" class="myAuditResult" method="auditResult">
+			<result type="json" />
+		</action>
+		<action name="favorite" class="myFavorite" method="favoriteCarport">
+			<result type="json" />
+		</action>
+		<action name="deletFavorite" class="myDeletFavorite" method="deletFavoriteCarport">
+			<result type="json" />
+		</action>
+		<action name="orderDetail" class="myOrderDetail" method="orderDetail">
+			<result type="json" />
+		</action>
+		<action name="createOrder" class="myCreateOrder" method="createOrder">
+			<result type="json" />
+		</action>
+		<action name="getFavorite" class="myGetFavorite" method="getFavorite">
+			<result type="json" />
+		</action>
+		<action name="getOrder" class="myGetOrder" method="getOrder">
+			<result type="json" />
+		</action>
+		<action name="getOrderInfo" class="myGetOrderInfo" method="getOrderInfo">
+			<result type="json" />
+		</action>
+		<action name="getRecord" class="myGetRecord" method="getRecord">
+			<result type="json" />
+		</action>
+		<action name="updateUser" class="myUpdateUser" method="updateUser">
+			<result type="json" />
+		</action>
+		<action name="createComment" class="myCreateComment" method="createComment">
+			<result type="json" />
+		</action>
+		<action name="getComment" class="myGetComment" method="getComment">
+			<result type="json" />
+		</action>
+		<action name="getMyComment" class="myGetMyComment" method="getMyComment">
+			<result type="json" />
+		</action>
+	</package>
+</struts>

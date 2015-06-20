@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 数据库配置 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+	<!-- <property name="jdbcUrl" value="jdbc:mysql://localhost/test" /> <property 
+		name="user" value="root" /> <property name="password" value="zyy123" /> -->
+
+		 <property name="jdbcUrl" value="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_didipark" 
+			/> <property name="user" value="3w1xn40yk1" /> <property name="password" 
+			value="3w0likhk4i0wzhz4l45k0k4jy5ijz1ihkxy4w2mx" />
+		<property name="testConnectionOnCheckin" value="true" />
+		<property name="testConnectionOnCheckout" value="true" />
+	</bean>
+
+	<!-- 定义Hibernate的SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 依赖注入数据源，注入正是上面定义的dataSource -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>com/didipark/pojo/User.hbm.xml</value>
+				<value>com/didipark/pojo/Carport.hbm.xml</value>
+				<value>com/didipark/pojo/Photo.hbm.xml</value>
+				<value>com/didipark/pojo/Cid.hbm.xml</value>
+				<value>com/didipark/pojo/Comment.hbm.xml</value>
+				<value>com/didipark/pojo/Order.hbm.xml</value>
+				<value>com/didipark/pojo/Favorite.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 配置Hibernate属性 -->
+			<value>
+				hibernate.autoReconnect=true
+				hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+				hibernate.format_sql=true;
+			</value>
+		</property>
+	</bean>
+
+	<!-- 定义DAO Bean -->
+	<bean id="userDaoImpl" class="com.didipark.impl.UserDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="carportDaoImpl" class="com.didipark.impl.CarportDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="photoDaoImpl" class="com.didipark.impl.PhotoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="cidDaoImpl" class="com.didipark.impl.CidDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orderDaoImpl" class="com.didipark.impl.OrderDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="favoriteDaoImpl" class="com.didipark.impl.FavoriteDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="commentDaoImpl" class="com.didipark.impl.CommentImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- 定义action -->
+	<bean id="mylogin" class="com.didipark.action.LoginAction" scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+		<property name="cidDao" ref="cidDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+	</bean>
+
+	<bean id="myRegister" class="com.didipark.action.RegisterAction"
+		scope="prototype">
+		<property name="cidDao" ref="cidDaoImpl" />
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myFigure" class="com.didipark.action.FigureAction"
+		scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myAddCarPort" class="com.didipark.action.AddCarportAction"
+		scope="prototype">
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+	</bean>
+
+	<bean id="myUpdateCarPort" class="com.didipark.action.UpdateCarportAction"
+		scope="prototype">
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+	</bean>
+
+	<bean id="myGetCarPort" class="com.didipark.action.GetCarportAction"
+		scope="prototype">
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+	</bean>
+	<bean id="myGetPhone" class="com.didipark.action.GetPhoneAction"
+		scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myUpdateUser" class="com.didipark.action.UpdateInfoAction"
+		scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+	<bean id="myOrderRequest" class="com.didipark.action.OrderRequestAction"
+		scope="prototype">
+		<property name="cidDao" ref="cidDaoImpl" />
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myAuditResult" class="com.didipark.action.AuditResultAction"
+		scope="prototype">
+		<property name="cidDao" ref="cidDaoImpl" />
+	</bean>
+
+	<bean id="myFavorite" class="com.didipark.action.FavoriteCarportAction"
+		scope="prototype">
+		<property name="favoriteDao" ref="favoriteDaoImpl" />
+	</bean>
+	<bean id="myDeletFavorite" class="com.didipark.action.DeletFavoriteCarportAction"
+		scope="prototype">
+		<property name="favoriteDao" ref="favoriteDaoImpl" />
+	</bean>
+	<bean id="myOrderDetail" class="com.didipark.action.OrderDetailAction"
+		scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+	</bean>
+
+	<bean id="myCreateOrder" class="com.didipark.action.CreateOrderAction"
+		scope="prototype">
+		<property name="orderDao" ref="orderDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="cidDao" ref="cidDaoImpl" />
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myGetFavorite" class="com.didipark.action.GetFavoriteAction"
+		scope="prototype">
+		<property name="photoDao" ref="photoDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="favoriteDao" ref="favoriteDaoImpl" />
+	</bean>
+	<bean id="myGetOrder" class="com.didipark.action.GetOrderAction"
+		scope="prototype">
+		<property name="photoDao" ref="photoDaoImpl" />
+		<property name="orderDao" ref="orderDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+	<bean id="myGetOrderInfo" class="com.didipark.action.GetOrderInfoAction"
+		scope="prototype">
+		<property name="userDao" ref="userDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+	</bean>
+	<bean id="myGetRecord" class="com.didipark.action.GetRecordAction"
+		scope="prototype">
+		<property name="orderDao" ref="orderDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+		<property name="commentDao" ref="commentDaoImpl" />
+	</bean>
+	<bean id="myCreateComment" class="com.didipark.action.CreateCommentAction"
+		scope="prototype">
+		<property name="orderDao" ref="orderDaoImpl" />
+		<property name="commentDao" ref="commentDaoImpl" />
+	</bean>
+
+	<bean id="myGetComment" class="com.didipark.action.GetCommentAction"
+		scope="prototype">
+		<property name="commentDao" ref="commentDaoImpl" />
+		<property name="userDao" ref="userDaoImpl" />
+	</bean>
+
+	<bean id="myGetMyComment" class="com.didipark.action.MyCommentAction"
+		scope="prototype">
+		<property name="commentDao" ref="commentDaoImpl" />
+		<property name="photoDao" ref="photoDaoImpl" />
+		<property name="carportDao" ref="carportDaoImpl" />
+	</bean>
+</beans>
+

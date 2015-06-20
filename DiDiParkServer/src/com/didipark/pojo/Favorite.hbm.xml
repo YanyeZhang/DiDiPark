@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.didipark.pojo">
+	<!-- 映射User持久化类 -->
+	<class name="Favorite" table="tb_FavoriteInfo">
+		<!-- 映射标识属性 -->
+		<id name="id" column="favorite_id">
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性: -->
+		<property name="userId" column="favorite_user_id" />
+		<property name="carportId" column="favorite_carport_id" />
+	</class>
+
+</hibernate-mapping>

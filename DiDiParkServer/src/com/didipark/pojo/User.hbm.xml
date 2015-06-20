@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.didipark.pojo">
+	<!-- 映射User持久化类 -->
+	<class name="User" table="tb_UserInfo">
+		<!-- 映射标识属性 -->
+		<id name="id" column="user_id">
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性: -->
+		<property name="imageUrl" column="user_imageUrl" />
+		<property name="password" column="user_password" />
+		<property name="nickName" column="user_nickName" />
+		<property name="phone" column="user_phone" unique="true" />
+		<property name="carCard" column="user_carcard" />
+		
+	</class>
+
+</hibernate-mapping>

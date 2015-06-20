@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.didipark.pojo">
+	<!-- 映射User持久化类 -->
+	<class name="Comment" table="tb_CommentInfo">
+		<!-- 映射标识属性 -->
+		<id name="id" column="comment_id">
+			<generator class="increment" />
+		</id>
+
+		<property name="carport_id" column="comment_carport_key" />
+		<property name="content" column="comment_carport_content" />
+		<property name="user_id" column="comment_user_id" />
+		<property name="time" column="comment_time" />
+		<property name="level" column="comment_level" />
+
+	</class>
+
+</hibernate-mapping>

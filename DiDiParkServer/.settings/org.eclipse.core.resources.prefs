@@ -1,0 +1,23 @@
+#Tue Jun 09 17:02:18 CST 2015
+eclipse.preferences.version=1
+encoding//src/com/didipark/action/AddCarportAction.java=UTF-8
+encoding//src/com/didipark/action/AuditResultAction.java=UTF-8
+encoding//src/com/didipark/action/CreateCommentAction.java=UTF-8
+encoding//src/com/didipark/action/CreateOrderAction.java=UTF-8
+encoding//src/com/didipark/action/DeletFavoriteCarportAction.java=UTF-8
+encoding//src/com/didipark/action/FavoriteCarportAction.java=UTF-8
+encoding//src/com/didipark/action/FigureAction.java=UTF-8
+encoding//src/com/didipark/action/GetCarportAction.java=UTF-8
+encoding//src/com/didipark/action/GetCommentAction.java=UTF-8
+encoding//src/com/didipark/action/GetFavoriteAction.java=UTF-8
+encoding//src/com/didipark/action/GetOrderAction.java=UTF-8
+encoding//src/com/didipark/action/GetOrderInfoAction.java=UTF-8
+encoding//src/com/didipark/action/GetPhoneAction.java=UTF-8
+encoding//src/com/didipark/action/GetRecordAction.java=UTF-8
+encoding//src/com/didipark/action/LoginAction.java=UTF-8
+encoding//src/com/didipark/action/MyCommentAction.java=UTF-8
+encoding//src/com/didipark/action/OrderDetailAction.java=UTF-8
+encoding//src/com/didipark/action/OrderRequestAction.java=UTF-8
+encoding//src/com/didipark/action/RegisterAction.java=UTF-8
+encoding//src/com/didipark/action/UpdateCarportAction.java=UTF-8
+encoding//src/com/didipark/action/UpdateInfoAction.java=UTF-8

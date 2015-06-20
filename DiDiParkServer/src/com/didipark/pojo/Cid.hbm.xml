@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.didipark.pojo">
+	<!-- 映射User持久化类 -->
+	<class name="Cid" table="tb_CidInfo">
+		<!-- 映射标识属性 -->
+		<id name="id" column="cid_id">
+		</id>
+
+		<property name="clientid" column="cid_key" unique="true" />
+
+		<!-- 映射普通属性: -->
+
+	</class>
+
+</hibernate-mapping>
