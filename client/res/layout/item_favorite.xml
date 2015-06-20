@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_account_button"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x10"
+            android:paddingRight="@dimen/x10"
+             >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/favorite_photo"
+                android:layout_width="@dimen/x90"
+                android:layout_height="@dimen/y90" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/x15"
+                android:layout_marginStart="@dimen/x15"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/favorite_carport_remain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_carport"
+                    android:drawableStart="@drawable/ic_carport"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/favorite_carport_moeny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_money"
+                    android:drawableStart="@drawable/ic_money"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/favorite_carport_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:layout_marginStart="@dimen/x5"
+                    android:drawableLeft="@drawable/ic_location"
+                    android:drawableStart="@drawable/ic_location"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end" >
+
+            <ImageView
+                android:id="@+id/favorite_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_carport_run" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

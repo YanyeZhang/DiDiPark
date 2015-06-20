@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:autoLink="all"
+    android:orientation="vertical" >
+
+    <com.zhangyanye.didipark.view.TopBar
+        android:id="@+id/user_info_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y40"
+        android:background="@color/splash_color"
+        topbar:title_text="@string/user_info"
+        topbar:left_img="@drawable/ic_back" />
+
+    <include layout="@layout/topbar_divider_line" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y10"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <include layout="@layout/horizontal_line" />
+
+        <Button
+            android:id="@+id/update_bt_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_account_button"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableLeft="@drawable/user_ic_phone"
+            android:drawablePadding="@dimen/x20"
+            android:onClick="btUpdateClick"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:drawableStart="@drawable/user_ic_phone"
+            android:gravity="start|center_vertical"
+            android:paddingBottom="@dimen/y12"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y12"
+            android:textSize="15sp" />
+
+        <include layout="@layout/horizontal_line" />
+
+        <Button
+            android:id="@+id/update_et_nickName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_account_button"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableLeft="@drawable/ic_user_data"
+            android:drawablePadding="@dimen/x20"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:drawableStart="@drawable/ic_user_data"
+            android:gravity="start|center_vertical"
+            android:paddingBottom="@dimen/y12"
+            android:onClick="btUpdateClick"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y12"
+            android:textSize="15sp" />
+
+        <include layout="@layout/horizontal_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y10"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <include layout="@layout/horizontal_line" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y10"
+            android:layout_marginTop="@dimen/y10"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/y8"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/y8"
+                android:text="@string/user_info_security"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/user_tv_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x8"
+                android:layout_marginStart="@dimen/x8"
+                android:paddingBottom="@dimen/y5"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/y5"
+                android:textColor="@color/red"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line" />
+
+        <Button
+            android:id="@+id/update_bt_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_account_button"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableLeft="@drawable/user_ic_password"
+            android:drawablePadding="@dimen/x20"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:drawableStart="@drawable/user_ic_password"
+            android:gravity="start|center_vertical"
+            android:paddingBottom="@dimen/y12"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y12"
+            android:onClick="btUpdateClick"
+            android:text="@string/user_info_password"
+            android:textSize="15sp" />
+
+        <include layout="@layout/horizontal_line" />
+
+        
+
+        <include layout="@layout/horizontal_line" />
+    </LinearLayout>
+
+</LinearLayout>

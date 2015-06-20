@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/x10"
+    android:paddingRight="@dimen/x10"
+    android:background="@drawable/bg_account_button"
+    android:orientation="horizontal" 
+    android:gravity="center_vertical">
+
+
+      <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/my_comment_img"
+                android:layout_width="@dimen/x90"
+                android:layout_height="@dimen/y90" />
+
+        <RelativeLayout        
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x5"
+            android:layout_marginStart="@dimen/x5"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/my_commtent_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="9"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/my_comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/y10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/my_comment_time" >
+
+            <TextView
+                android:id="@+id/my_comment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+           <RatingBar
+                android:id="@+id/my_comment_ratingbar"
+                style="@style/MyRatingBarSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5" />
+            </LinearLayout>
+        </RelativeLayout>
+
+</LinearLayout>

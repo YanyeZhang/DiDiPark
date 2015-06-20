@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.zhangyanye.didipark.view.TopBar
+        android:id="@+id/update_carport_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y40"
+        android:background="@color/splash_color"
+        topbar:left_img="@drawable/ic_back"
+        topbar:right_img="@drawable/ic_ok"
+        topbar:title_text="@string/update_carport_info" />
+
+    <LinearLayout
+        android:id="@+id/update_carport_view_group"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y30"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y10"
+        android:orientation="vertical" >
+
+        <include layout="@layout/horizontal_line" />
+
+        <EditText
+            android:id="@+id/update_carport_addr"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_account_button"
+            android:drawableLeft="@drawable/ic_add_location"
+            android:drawablePadding="@dimen/x15"
+            android:drawableStart="@drawable/ic_add_location"
+            android:gravity="start|center_vertical"
+            android:hint=""
+            android:paddingBottom="@dimen/y8"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y8"
+            android:textSize="15sp" />
+
+        <include layout="@layout/horizontal_line" />
+    </LinearLayout>
+
+    <include layout="@layout/horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y10"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/y5" >
+
+        <EditText
+            android:id="@+id/update_carport_decribe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="top|start"
+            android:hint="@string/publish_add_decribe"
+            android:lines="3"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/update_carport_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y15"
+            android:background="@color/white"
+            android:contentDescription="@string/publish_add_photo_decribe"
+            android:onClick="onChangePhoto"
+            android:src="@drawable/ic_add_camera" />
+    </LinearLayout>
+
+    <include layout="@layout/horizontal_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        android:text="@string/publish_add_time_money_hint1"
+        android:textColor="@color/gray_8f"
+        android:textSize="12sp" />
+
+    <include layout="@layout/horizontal_line" />
+
+    <EditText
+        android:id="@+id/update_carport_money_hour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_money_time"
+        android:drawablePadding="@dimen/x15"
+        android:drawableStart="@drawable/ic_money_time"
+        android:gravity="top|start"
+        android:hint="@string/publish_add_time_money"
+        android:inputType="number"
+        android:paddingBottom="@dimen/y8"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/y8"
+        android:textSize="15sp" />
+
+    <include layout="@layout/horizontal_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        android:text="@string/publish_add_num_carport_hint"
+        android:textColor="@color/gray_8f"
+        android:textSize="12sp" />
+
+    <include layout="@layout/horizontal_line" />
+
+    <EditText
+        android:id="@+id/update_carport_num_carport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_drive_off"
+        android:drawablePadding="@dimen/x15"
+        android:drawableStart="@drawable/ic_drive_off"
+        android:gravity="top|start"
+        android:hint="@string/publish_add_num_carport"
+        android:inputType="number"
+        android:paddingBottom="@dimen/y8"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/y8"
+        android:textSize="15sp" />
+
+    <include layout="@layout/horizontal_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        android:text="@string/update_carport_state"
+        android:textColor="@color/gray_8f"
+        android:textSize="12sp" />
+
+    <com.zhangyanye.didipark.view.CustomerSpinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="@drawable/bg_spinner" />
+
+</LinearLayout>

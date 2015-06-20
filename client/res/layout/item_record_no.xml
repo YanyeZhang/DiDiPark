@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_account_button"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/x10"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingRight="@dimen/x10" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/record_no_img"
+        android:layout_width="@dimen/x90"
+        android:layout_height="@dimen/y90"
+        android:src="@drawable/ic_def_pic2" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/x5"
+        android:layout_marginStart="@dimen/x5" >
+
+        <TextView
+            android:id="@+id/record_no_tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:ems="9"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/record_no_tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/record_no_tv_place"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/y5" >
+
+           <ImageButton
+                android:id="@+id/record_no_ibt_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/ic_comment_now" /> 
+
+            <TextView
+                android:id="@+id/record_no_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

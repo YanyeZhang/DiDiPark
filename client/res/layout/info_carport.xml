@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_maker_ly"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_carport_selector"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:paddingTop="@dimen/y5"
+    android:paddingBottom="@dimen/y5"
+    android:paddingLeft="@dimen/x5"
+    android:paddingRight="@dimen/x5"
+    android:weightSum="2" >
+
+    <TextView
+        android:id="@+id/carport_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_location"
+        android:drawableStart="@drawable/ic_location"
+        android:gravity="center_vertical"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <ImageView
+            android:id="@+id/carport_img"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y50"
+            android:layout_marginRight="@dimen/x2"
+            android:layout_marginLeft="@dimen/x2"
+            android:layout_weight="1"
+            android:src="@drawable/ic_def_pic2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/carport_moeny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_money"
+                android:drawableStart="@drawable/ic_money"
+                 android:gravity="center_vertical"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/carport_remain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_carport"
+                android:drawableStart="@drawable/ic_carport"
+                android:gravity="center_vertical"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

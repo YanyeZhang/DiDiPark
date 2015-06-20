@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="state">
+        <item>运营</item>
+        <item>停运</item>
+        <item>下架</item>
+    </string-array>
+
+</resources>

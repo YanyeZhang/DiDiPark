@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:autoLink="all"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.zhangyanye.didipark.view.TopBar
+        android:id="@+id/order_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y40"
+        android:background="@color/splash_color"
+        topbar:left_img="@drawable/ic_back"
+        topbar:title_text="@string/order_topbar" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/order_fresh_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/order_listView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/gray_cc"
+                    android:dividerHeight="@dimen/line"
+                    android:scrollbars="none" />
+
+                <include layout="@layout/horizontal_line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/order_alternate_view_group"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/y30"
+                android:orientation="horizontal" />
+        </FrameLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

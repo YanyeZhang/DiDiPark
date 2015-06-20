@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhangyanye.didipark"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="getui.permission.GetuiService.com.zhangyanye.didipark" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MyTheme" >
+        <activity android:name=".activity.SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.UserInfoAcitvity" />
+        <activity android:name=".activity.PublishActivity" />
+        <activity android:name=".activity.UpdateCarportActivity" />
+        <activity android:name=".activity.MoreCarportActivity" />
+        <activity android:name=".activity.AuditActivity" />
+        <activity android:name=".activity.MyFavoriteActivity" />
+        <activity android:name=".activity.PayMoneyActivity" />
+        <activity android:name=".activity.MyOrderActivity" />
+        <activity android:name=".activity.MoreOrderActvity" />
+        <activity android:name=".activity.MyRecordActivity" />
+        <activity android:name=".activity.AddCommentActivity" />
+        <activity android:name=".activity.UpdateInfoActivity" />
+        <activity android:name=".activity.UpdatePasActivity" />
+        <activity android:name=".activity.CustomerCommentActivity" />
+        <activity android:name=".activity.MyCommentActivity" />
+        <activity android:name=".activity.UpdateNickNameActivity" />
+        <activity android:name=".activity.WebActivityActivity" />
+         <activity android:name=".activity.WebActivity" />
+        <service android:name="com.zhangyanye.didipark.service.BaiduVoiceService" />
+
+        <!-- tencent sdk -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".ReturnActivity" >
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="1104505966" />
+            </intent-filter>
+        </activity>
+        <!-- tencent end -->
+
+
+        <!-- share sdk -->
+        <activity
+            android:name="cn.smssdk.SMSSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Theme.MyTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- share sdk  end -->
+
+
+        <!-- baidu map -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="PlgmVNpR1N7uE5A5wzW2mNzX" />
+        <!-- baidu map end -->
+
+
+        <!-- getui sdk -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="yFUMHuscMO8WFVh1jxOvz5" /> <!-- 替换为第三方应用的APPID -->
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="14by3zVfYU71IJFg31Mwb6" /> <!-- 替换为第三方应用的APPKEY -->
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="i2KwSHBsRb8u2TcgSNAEB9" /> <!-- 替换为第三方应用的APPSECRET -->
+        <meta-data
+            android:name="PUSH_GROUPID"
+            android:value="" />
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- 配置弹框activity -->
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- 这个com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4固定，不能修改 -->
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <!-- 替换为android:name="com.igexin.sdk.action.第三方的appId" -->
+                <action android:name="com.igexin.sdk.action.yFUMHuscMO8WFVh1jxOvz5" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+        <!-- 个推download模块配置 -->
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.zhangyanye.didipark"
+            android:exported="false"
+            android:process=":pushservice" />
+         <!-- 替换为downloads.第三方包名 -->
+
+        <!-- 配置第三方Receiver -->
+        <receiver
+            android:name="com.zhangyanye.didipark.broadcast.PushReceiver"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- 替换为action android:name="com.igexin.sdk.action.第三方应用APPID" -->
+                <action android:name="com.igexin.sdk.action.yFUMHuscMO8WFVh1jxOvz5" />
+            </intent-filter>
+        </receiver>
+        <!-- getui end -->
+
+
+        <!-- bmob pay sdk activity begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.bmob.pay.tool.PayActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- bmob pay sdk activity end -->
+
+    </application>
+
+</manifest>

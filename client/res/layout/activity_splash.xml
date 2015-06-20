@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash_color" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/y10"
+        android:layout_marginBottom="@dimen/y25"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+     <TextView
+        android:id="@+id/TextView01"
+        android:padding="@dimen/y5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/y15"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_copyright"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+     <ImageView
+         android:id="@+id/imageView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/textView1"
+         android:layout_centerHorizontal="true"
+         android:padding="@dimen/y3"
+         android:src="@drawable/ic_launcher" />
+
+     <TextView
+         android:id="@+id/splash_tv"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="@dimen/y120"
+         android:text="@string/app_slogan"
+         android:textColor="@color/white"
+         android:textSize="35sp" />
+
+</RelativeLayout>

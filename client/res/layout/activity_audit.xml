@@ -1,0 +1,219 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.zhangyanye.didipark.view.TopBar
+        android:id="@+id/audit_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y40"
+        android:background="@color/splash_color"
+        topbar:left_img="@drawable/ic_back"
+        topbar:title_text="@string/audit_topbar" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/x10" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/audit_message"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.zhangyanye.didipark.view.CircleImageView
+                    android:id="@+id/audit_iv_figure"
+                    android:layout_width="@dimen/x70"
+                    android:layout_height="@dimen/y47"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/y5"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_figure_def"
+                    circle:border_color="@color/white"
+                    circle:border_overlay="false"
+                    circle:border_width="@dimen/x3" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/audit_tv_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/audit_tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/horizontal_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:text="@string/carport_message"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:padding="@dimen/x5" >
+
+                <ImageView
+                    android:id="@+id/audit_iv_photo"
+                    android:layout_width="@dimen/x90"
+                    android:layout_height="@dimen/y70"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/y5"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_carport_def" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/audit_tv_addr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x15"
+                        android:layout_marginStart="@dimen/x15"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/audit_tv_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y15"
+                        android:layout_marginLeft="@dimen/x15"
+                        android:layout_marginStart="@dimen/x15"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/horizontal_line" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/audit_time"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/audit_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y10"
+                android:layout_marginTop="@dimen/y10"
+                android:gravity="top"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/audit_type"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:text="@string/audit_type_content"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <include layout="@layout/horizontal_line" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <ImageButton
+                    android:id="@+id/audit_disagree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:onClick="buttonClick"
+                    android:src="@drawable/bg_disagree_selector" />
+
+                <ImageButton
+                    android:id="@+id/audit_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:onClick="buttonClick"
+                    android:src="@drawable/bg_agree_selector" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audit_alternate_view_group"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/y30"
+            android:orientation="horizontal" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/y10"
+    android:background="@drawable/bg_carport_selector" >
+
+    <ImageView
+        android:id="@+id/publish_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_carport_stop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y10"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/y10" >
+
+        <TextView
+            android:id="@+id/publish_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="@dimen/x5"
+            android:drawableStart="@drawable/ic_location"
+            android:text="地点" />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/publish_img"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y70"
+            android:layout_marginBottom="@dimen/y10"
+            android:layout_marginTop="@dimen/y10"
+            android:src="@drawable/ic_def_pic2" />
+
+        <TextView
+            android:id="@+id/publish_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_describe"
+            android:drawablePadding="@dimen/x5"
+            android:drawableStart="@drawable/ic_describe"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/y1"
+            android:paddingTop="@dimen/y1"
+             />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y10"
+            android:layout_marginTop="@dimen/y10"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/publish_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_comment"
+                android:drawablePadding="@dimen/x5"
+                android:drawableStart="@drawable/ic_comment"
+                android:gravity="center_vertical"
+                android:text="53人次" />
+
+            <TextView
+                android:id="@+id/publish_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_money"
+                android:drawablePadding="@dimen/x5"
+                android:drawableStart="@drawable/ic_money"
+                android:gravity="center_vertical"
+                android:text="30元/小时" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/publish_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:drawableLeft="@drawable/ic_carport"
+                android:drawablePadding="@dimen/x10"
+                android:drawableStart="@drawable/ic_carport"
+                android:text="1"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/x5"
+                android:layout_marginStart="@dimen/x5"
+                android:text="@string/publish_carport_remain" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

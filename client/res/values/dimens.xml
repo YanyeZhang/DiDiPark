@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="et_text_size">14sp</dimen>
+    <dimen name="checkbox_text_size">12sp</dimen>
+    <dimen name="tv_text_size">12sp</dimen>
+    <dimen name="tv_url_text_size">15sp</dimen>
+    <dimen name="tv_trun_login_size">20sp</dimen>
+    <dimen name="tv_menu_size">10sp</dimen>
+    <dimen name="line">0.5px</dimen>
+</resources>

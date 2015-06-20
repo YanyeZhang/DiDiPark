@@ -1,0 +1,24 @@
+<resources>
+
+    <!--
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    -->
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">6dp</dimen>
+    <dimen name="activity_vertical_margin">6dp</dimen>
+    <dimen name="register_margin_top_1">15dp</dimen>
+    <dimen name="et_margin_top">18dp</dimen>
+    <dimen name="et_margin_left">35dp</dimen>
+    <dimen name="et_text_size">14sp</dimen>
+    <dimen name="checkbox_text_size">12sp</dimen>
+    <dimen name="tv_text_size">12sp</dimen>
+    <dimen name="tv_url_text_size">15sp</dimen>
+    <dimen name="tv_trun_login_size">22sp</dimen>
+
+
+
+</resources>

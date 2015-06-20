@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/x10"
+    android:paddingRight="@dimen/x10"
+    android:background="@drawable/bg_account_button"
+    android:orientation="horizontal" 
+    android:gravity="center_vertical">
+
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/record_img"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y90"
+            android:src="@drawable/ic_def_pic2" />
+
+        <RelativeLayout        
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x5"
+            android:layout_marginStart="@dimen/x5"
+            android:layout_gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/record_tv_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"  
+                android:ems="9"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/record_tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/y5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/record_tv_place" >
+
+            <TextView
+                android:id="@+id/record_tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="+15"
+                android:textColor="@color/orange"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/record_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" 
+                android:text="+15"
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popmenu_bg"
+    android:orientation="vertical"
+    android:paddingBottom="9dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="15dp" >
+
+    <Button
+        android:id="@+id/pop_favorite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pop_button_selector"
+        android:drawableLeft="@drawable/ic_carport_favorite_off"
+        android:drawableStart="@drawable/ic_carport_favorite_off"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingTop="1dp"
+        android:text="收藏"
+        android:textColor="#B8B8B8" />
+
+    <Button
+        android:id="@+id/pop_report"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pop_button_selector"
+        android:drawableLeft="@drawable/ic_report"
+        android:drawableStart="@drawable/ic_report"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:text="举报"
+        android:textColor="#B8B8B8" />
+
+    
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:autoLink="all"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include layout="@layout/horizontal_line" />
+
+            <ListView
+                android:id="@+id/record_all_listView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/gray_cc"
+                android:dividerHeight="@dimen/line"
+                android:scrollbars="none" />
+
+            <include layout="@layout/horizontal_line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_all_alternate_view_group"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/y30"
+            android:orientation="horizontal" />
+    </FrameLayout>
+
+</LinearLayout>

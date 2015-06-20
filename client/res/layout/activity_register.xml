@@ -1,0 +1,230 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:autoLink="all"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.zhangyanye.didipark.view.TopBar
+        android:id="@+id/topBar1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y40"
+        android:background="@color/splash_color"
+        topbar:title_text="@string/user_register" />
+
+    <LinearLayout
+        android:id="@+id/alternate_view_group"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y30"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="@dimen/x60"
+        android:layout_marginRight="@dimen/x60"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_register_account"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_email"
+            android:onClick="editTextSelector" >
+
+            <EditText
+                android:id="@+id/et_register_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x48"
+                android:layout_marginStart="@dimen/x48"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:hint="@string/input_account"
+                android:lines="1"
+                android:maxLength="15"
+                android:textColor="@color/gray_8f"
+                android:textSize="@dimen/et_text_size" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_register_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/signup_password"
+            android:onClick="editTextSelector" >
+
+            <EditText
+                android:id="@+id/et_register_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x48"
+                android:layout_marginStart="@dimen/x48"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLength="15"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/et_text_size" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_register_confirm_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/signup_password"
+            android:onClick="editTextSelector" >
+
+            <EditText
+                android:id="@+id/et_register_confirm_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x48"
+                android:layout_marginStart="@dimen/x48"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:hint="@string/input_confirm_password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLength="15"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/et_text_size" >
+            </EditText>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/register_btn"
+            android:onClick="bt_register"
+            android:text="@string/btn_finish"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y20"
+            android:orientation="horizontal"
+            android:weightSum="4" >
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                style="@style/CustomCheckboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/check_string"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/checkbox_text_size" />
+
+            <TextView
+                android:id="@+id/tv_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/tv_url_text_size" />
+
+            <TextView
+                android:id="@+id/tv_and"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/and"
+                android:textSize="@dimen/tv_text_size" />
+
+            <TextView
+                android:id="@+id/tv_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/tv_url_text_size" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_turn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@color/transparent"
+            android:text="@string/btn_turn_login"
+            android:textColor="@color/splash_color"
+            android:textSize="@dimen/tv_trun_login_size"
+            android:onClick="intentLogin" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:contentDescription="@string/register_description"
+                android:src="@drawable/signup_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/register_other_way"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:contentDescription="@string/register_description"
+                android:src="@drawable/signup_line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <ImageView
+                android:id="@+id/qq_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:contentDescription="@string/register_description"
+                android:onClick="qqLogin_register"
+                android:src="@drawable/signup_qq" />
+
+            <ImageView
+                android:id="@+id/weibo_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:onClick="registerWeiBo"
+                android:contentDescription="@string/register_description"
+                android:src="@drawable/signup_sina" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

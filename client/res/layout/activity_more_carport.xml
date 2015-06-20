@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y40" >
+
+        <com.zhangyanye.didipark.view.TopBar
+            android:id="@+id/more_carport_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y40"
+            android:background="@color/splash_color"
+            topbar:left_img="@drawable/ic_back"
+            topbar:right_img="@drawable/ic_more" />
+
+        <TextView
+            android:id="@+id/flag"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y38"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <include layout="@layout/topbar_divider_line" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/y10" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/more_carport_img"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/y150"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_def_pic2" />
+
+                <include layout="@layout/horizontal_line" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_account_button" >
+
+                    <TextView
+                        android:id="@+id/temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_account_button"
+                        android:gravity="start|center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingEnd="0px"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="0px"
+                        android:paddingStart="@dimen/x20"
+                        android:paddingTop="@dimen/y12"
+                        android:text="@string/carport_remain"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/more_carport_remain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/temp"
+                        android:layout_toRightOf="@+id/temp"
+                        android:background="@drawable/bg_account_button"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingTop="@dimen/y12"
+                        android:text="1"
+                        android:textColor="@color/red"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/more_carport_remain"
+                        android:layout_toRightOf="@+id/more_carport_remain"
+                        android:background="@drawable/bg_account_button"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingTop="@dimen/y12"
+                        android:text="@string/carport_remain_unit"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/more_carport_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/bg_order_button"
+                        android:gravity="start|center_vertical"
+                        android:onClick="submitRequest"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:paddingTop="@dimen/y12"
+                        android:text="@string/carport_park"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <include layout="@layout/horizontal_line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y10"
+                    android:layout_marginTop="@dimen/y10"
+                    android:orientation="vertical" >
+
+                    <include layout="@layout/horizontal_line" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_account_button" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bg_account_button"
+                            android:paddingBottom="@dimen/y6"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y6"
+                            android:text="@string/carport_message"
+                            android:textSize="15sp" />
+
+                        <ImageButton
+                            android:id="@+id/more_carport_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/transparent"
+                            android:gravity="start|center_vertical"
+                            android:onClick="callPhone"
+                            android:paddingBottom="@dimen/y6"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y6"
+                            android:src="@drawable/bg_phone_selector"
+                            android:text="@string/carport_park"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <include layout="@layout/horizontal_line" />
+
+                    <TextView
+                        android:id="@+id/more_carport_money"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_account_button"
+                        android:drawableLeft="@drawable/ic_money_time"
+                        android:drawablePadding="@dimen/x15"
+                        android:drawableStart="@drawable/ic_money_time"
+                        android:gravity="start|center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:paddingTop="@dimen/y12"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <include layout="@layout/horizontal_line" />
+
+                    <TextView
+                        android:id="@+id/more_carport_addr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_account_button"
+                        android:drawableLeft="@drawable/ic_add_location"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableStart="@drawable/ic_add_location"
+                        android:gravity="start|center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:paddingTop="@dimen/y12"
+                        android:text="@string/account_data"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <include layout="@layout/horizontal_line" />
+
+                    <TextView
+                        android:id="@+id/more_carport_describe"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_account_button"
+                        android:drawableLeft="@drawable/ic_carport_describe"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableStart="@drawable/ic_carport_describe"
+                        android:gravity="start|center_vertical"
+                        android:paddingBottom="@dimen/y12"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:paddingTop="@dimen/y12"
+                        android:text="@string/account_data"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <include layout="@layout/horizontal_line" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:orientation="vertical" >
+
+                        <include layout="@layout/horizontal_line" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/y6"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y6" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:text="@string/carport_comment"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/more_carport_per_rat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:paddingLeft="@dimen/x20"
+                                android:paddingRight="@dimen/x20"
+                                android:textColor="@color/orange"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/horizontal_line" />
+
+                        <ListView
+                            android:id="@+id/more_carport_bt_list"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:divider="@color/gray_cc"
+                            android:dividerHeight="@dimen/line"
+                            android:scrollbars="none" >
+                        </ListView>
+
+                        <include layout="@layout/horizontal_line" />
+
+                        <Button
+                            android:id="@+id/more_carport_bt"
+                            android:onClick="allComment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:drawableEnd="@drawable/ic_arrow_right"
+                            android:drawablePadding="@dimen/x20"
+                            android:drawableRight="@drawable/ic_arrow_right"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y6"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y6"
+                            android:text="@string/carport_all_comment"
+                            android:textColor="@color/splash_color"
+                            android:textSize="14sp" />
+
+                        <include layout="@layout/horizontal_line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:orientation="vertical" >
+
+                        <include layout="@layout/horizontal_line" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y6"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y6"
+                            android:text="@string/carport_need_know"
+                            android:textSize="15sp" />
+
+                        <include layout="@layout/horizontal_line" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_validity"
+                            android:textColor="@color/orange"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x25"
+                            android:paddingRight="@dimen/x25"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_validity_content"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_rule"
+                            android:textColor="@color/orange"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x25"
+                            android:paddingRight="@dimen/x25"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_rule_content1"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x25"
+                            android:paddingRight="@dimen/x25"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_rule_content2"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_account_button"
+                            android:gravity="start|center_vertical"
+                            android:paddingBottom="@dimen/y3"
+                            android:paddingLeft="@dimen/x25"
+                            android:paddingRight="@dimen/x25"
+                            android:paddingTop="@dimen/y3"
+                            android:text="@string/carport_rule_content4"
+                            android:textSize="14sp" />
+
+                        <include layout="@layout/horizontal_line" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/more_carport_alternate_view"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/y30"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

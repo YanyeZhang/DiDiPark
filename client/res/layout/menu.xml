@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/ghostwhite"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="3" >
+
+    <Button
+        android:layout_marginTop="@dimen/y3"
+        android:id="@+id/bt_carport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:drawableTop="@drawable/bt_background_carport"
+        android:onClick="onTabClicked"
+        android:textColor="@color/gray_8f"
+        android:text="@string/menu_carport"
+        android:textSize="@dimen/tv_menu_size" />
+
+    <Button
+        android:layout_marginTop="@dimen/y3"
+        android:id="@+id/bt_publish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:drawableTop="@drawable/bt_background_publish"
+        android:onClick="onTabClicked"
+        android:text="@string/menu_publish"
+        android:textColor="@color/gray_8f"
+        android:textSize="@dimen/tv_menu_size" />
+
+    <Button
+        android:layout_marginTop="@dimen/y3"
+        android:id="@+id/bt_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:drawableTop="@drawable/bt_background_user"
+        android:onClick="onTabClicked"
+        android:text="@string/menu_user"
+        android:textColor="@color/gray_8f"
+        android:textSize="@dimen/tv_menu_size" />
+
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/x10"
+    android:paddingRight="@dimen/x10"
+    android:paddingTop="@dimen/x5"
+    android:paddingBottom="@dimen/x5"
+    android:background="@drawable/bg_account_button"
+    android:orientation="horizontal" 
+    android:gravity="center_vertical">
+
+
+        <com.zhangyanye.didipark.view.CircleImageView
+            android:id="@+id/comment_img"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y37"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_on"
+            circle:border_color="@color/white"
+            circle:border_overlay="false"
+            circle:border_width="@dimen/x3" />
+
+        <RelativeLayout        
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x5"
+            android:layout_marginStart="@dimen/x5"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/commtent_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="9"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/y5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/comment_time" >
+
+            <TextView
+                android:id="@+id/comment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+           <RatingBar
+                android:id="@+id/comment_ratingbar"
+                style="@style/MyRatingBarSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5" />
+            </LinearLayout>
+        </RelativeLayout>
+
+</LinearLayout>
